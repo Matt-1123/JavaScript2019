@@ -68,13 +68,7 @@ function isPalindrome(str) {
     .split("")
     .reverse()
     .join("");
-  let result;
-  if (revStr == str) {
-    result = true;
-  } else {
-    result = false;
-  }
-  return result;
+  return revStr == str;
 }
 
 /**

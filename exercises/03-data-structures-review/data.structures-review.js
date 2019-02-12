@@ -11,6 +11,8 @@
 
 function upperCaseEachElementInArray(array) {
   /*** Dont forget to return an array with all elements being upper-cased */
+  let capitals = array.map(item => item[0].toUpperCase());
+  return result;
 }
 
 /**
@@ -25,7 +27,15 @@ function upperCaseEachElementInArray(array) {
  * // {firstName:'Tom',MiddleName:'Harris', lastName:'Jerry'}
  */
 
-function addMiddleNameToObject(names, middleName) {}
+function addMiddleNameToObject(names, middleName) {
+  let fullName = {
+    ...names,
+    names.firstName,
+    middleName: this.middleName,
+    names.lastName
+  };
+  return fullName;
+}
 
 /**
  * Use split method to return an array on white space
@@ -36,7 +46,9 @@ function addMiddleNameToObject(names, middleName) {}
  * // ["I", "went", "home."]
  */
 
-function stringToArrayConverter(str) {}
+function stringToArrayConverter(str) {
+  return str.split(" ");
+}
 
 /**
  *
@@ -55,7 +67,17 @@ function stringToArrayConverter(str) {}
  * { "Javascript":2, "HTML":2, "CSS":2, "PHP":1 }
  */
 
-function dynamicObject(array) {}
+function dynamicObject(array) {
+  let obj = {};
+  for(var item of array){
+    if(obj[item]){
+      obj[item] = obj[item] + 1;
+    } else{
+      obj[item] = 1;
+    }
+  }
+  return obj;
+}
 
 module.exports = {
   upperCaseEachElementInArray,
