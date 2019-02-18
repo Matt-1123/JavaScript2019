@@ -22,13 +22,16 @@ const calculator = () => {
    * @returns {number} the value of sum
    */
   let calc = {
-    set numToAdd(num) {
-      return (typeof num === 'number' ? this.sum += num : console.log("Invalid input.");)
-    }
-    get displaySum() {
+    setSum: function (num) {
+      if (typeof num === 'number') {
+        sum += num;
+      }
+    },
+    getSum: function () {
       return sum;
     }
   }
+  return calc;
 };
 
 /**
@@ -56,7 +59,26 @@ const calculator = () => {
  * guessRound2(1); // "No more guesses. The answer was 0"
  */
 
-const guessingGame = numberOfRounds => { };
+const guessingGame = numberOfRounds => {
+  let answer = Math.floor(Math.random() * 11);
+  let guesses = 0;
+  let guessTest = (guess) => {
+    if (guesses < numberOfRounds) {
+      if (guess === answer) {
+        return "You got it!";
+      } else if (guess < answer) {
+        guesses++;
+        return "You're too low!";
+      } else if (guess > answer) {
+        guesses++;
+        return "You're too high!";
+      }
+    } else {
+      return `No more guesses. The answer was ${answer}`;
+    }
+  };
+  return guessTest;
+};
 
 module.exports = {
   calculator,
