@@ -9,6 +9,7 @@ const calculator = () => {
    * Create a private variable called "sum"
    * @var {number}
    */
+  let sum = 0;
   /**
    * Return an object that has two methods:
    *
@@ -20,6 +21,14 @@ const calculator = () => {
    * that should return the value of "sum" above.
    * @returns {number} the value of sum
    */
+  let calc = {
+    set numToAdd(num) {
+      return (typeof num === 'number' ? this.sum += num : console.log("Invalid input.");)
+    }
+    get displaySum() {
+      return sum;
+    }
+  }
 };
 
 /**
@@ -47,7 +56,7 @@ const calculator = () => {
  * guessRound2(1); // "No more guesses. The answer was 0"
  */
 
-const guessingGame = numberOfRounds => {};
+const guessingGame = numberOfRounds => { };
 
 module.exports = {
   calculator,
