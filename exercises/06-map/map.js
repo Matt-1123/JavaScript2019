@@ -1,3 +1,5 @@
+// npm run test ./test/06-map/map-test.js
+
 /**
  * Recreate the map function
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
@@ -5,14 +7,20 @@
  * @param {function} callback
  * @returns {array} new array
  */
-const map = (arr, callback) => {};
+const map = (arr, callback) => {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i], i, arr));
+  }
+  return result;
+};
 
 /**
  * Multiplies each value in an array by two
  * @param {array} arr an array of numbers e.g. [1, 3, 5]
  * @returns {array} new array, with each value doubled e.g. [2, 5, 10]
  */
-const doubleValues = arr => {};
+const doubleValues = arr => arr.map(num => num * 2);
 
 /**
  * Given an array nested with objects
@@ -32,7 +40,10 @@ const doubleValues = arr => {};
  * ];
  * extractKey(arrayOfNames, 'name'); // ['Ellie', 'Tim', 'Matt', 'Colt']
  */
-const extractKey = (arr, key) => {};
+const extractKey = (arr, key) => {
+  let result = arr.map(obj => obj[key]);
+  return result;
+};
 
 module.exports = {
   map,

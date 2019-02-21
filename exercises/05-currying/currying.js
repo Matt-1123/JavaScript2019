@@ -13,7 +13,10 @@
  * @param {number} a
  * @param {number} b
  */
-const multiplier = (a, b) => {};
+const multiplier = (a, b) => {
+  return (typeof a === 'number' && typeof b === 'number') ? a * b : b => a * b;
+  // use typeof because otherwise if one of the parameters is 0 it'll be interpreted as falsy.
+}
 
 module.exports = {
   multiplier

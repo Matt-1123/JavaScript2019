@@ -7,9 +7,7 @@
  *  - Eddy
  * @param {string} name instuctor name
  */
-const printer = (name) => {
-  console.log(`***${name}***`)
-};
+const printer = name => console.log(`***${name}***`);
 
 /**
  * Loops through the array of strings
@@ -17,9 +15,7 @@ const printer = (name) => {
  * @param {array}
  * @param {function} callback printer function
  */
-const printNames = (name, format) => {
-  return name.forEach(item => format(item))
-};
+const printNames = (array, callback) => array.forEach(name => callback(name));
 
 module.exports = {
   printer,
