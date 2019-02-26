@@ -6,14 +6,11 @@
  * @returns {mixed} a single value in the array
  */
 const find = (arr, callback) => {
-  let result;
   for (let i = 0; i < arr.length; i++) {
     if (callback(arr[i], i, arr)) {
-      result = arr[i];
-      break;
+      return arr[i];
     }
   }
-  return result;
 };
 
 /**
