@@ -10,9 +10,9 @@
  * Ignore this. This is for testing your answer.
  */
 exports.before = {
-  multiply,
-  doubleNumbers,
-  wait
+    multiply,
+    doubleNumbers,
+    wait
 };
 
 /**
@@ -57,18 +57,14 @@ var isFinished = false;
 //     isFinished = true;
 //   }, 100);
 // }
-var wait = () => {
-  (setTimeout = () => {
-    isFinished = true;
-  }, 100);
-};
+var wait = () => setTimeout(() => isFinished = true, 100);
 
 /**
  * Ignore this. This is for testing your answer.
  */
 exports.after = {
-  multiply,
-  doubleNumbers,
-  wait,
-  getIsFinished: () => isFinished
+    multiply,
+    doubleNumbers,
+    wait,
+    getIsFinished: () => isFinished
 };

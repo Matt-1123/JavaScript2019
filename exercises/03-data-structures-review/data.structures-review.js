@@ -11,8 +11,7 @@
 
 function upperCaseEachElementInArray(array) {
   /*** Dont forget to return an array with all elements being upper-cased */
-  let capitals = array.map(item => item[0].toUpperCase());
-  return result;
+  return array.map(item => `${item[0].toUpperCase()}${item.substring(1)}`);
 }
 
 /**
@@ -30,9 +29,7 @@ function upperCaseEachElementInArray(array) {
 function addMiddleNameToObject(names, middleName) {
   let fullName = {
     ...names,
-    names.firstName,
-    middleName: this.middleName,
-    names.lastName
+    middleName
   };
   return fullName;
 }
@@ -69,10 +66,10 @@ function stringToArrayConverter(str) {
 
 function dynamicObject(array) {
   let obj = {};
-  for(var item of array){
-    if(obj[item]){
+  for (var item of array) {
+    if (obj[item]) {
       obj[item] = obj[item] + 1;
-    } else{
+    } else {
       obj[item] = 1;
     }
   }
