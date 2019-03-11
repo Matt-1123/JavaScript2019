@@ -25,10 +25,12 @@
 // }
 
 class Calculator {
-  constructor(startValue = 0) {
-    this.total = startValue;
+  total = 0;
+
+  constructor(startValue) {
+    if (typeof startValue === "number") this.total = startValue;
   }
-  add = num => typeof(num) === 'number' ? this.total += num : null;
+  add = num => typeof (num) === 'number' ? this.total += num : null;
   get = () => this.total;
 }
 
@@ -39,11 +41,11 @@ class Calculator {
  * @method substract which should accept a parameter of type number. The function should subtract the parameter from the total.
  */
 
-class NewCalculator extends Calculator{
-  constructor(startValue){
+class NewCalculator extends Calculator {
+  constructor(startValue) {
     super(startValue);
   }
-  subtract = num => typeof(num) === 'number' ? this.total -= num : null; 
+  subtract = num => typeof (num) === 'number' ? this.total -= num : null;
 }
 
 /**
