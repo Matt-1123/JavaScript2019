@@ -1,14 +1,27 @@
 import React, { Component } from "react";
-// Import IsUserLoggedIn here
+import './App.css'
+import IsUserLoggedIn from './components/IsUserLoggedIn'
 
 class App extends Component {
   render() {
     const Users = [
-      // Complete me
+      {
+        name: "Matt",
+        isUserLoggedIn: true
+      },
+      {
+        name: "Kelly",
+        isUserLoggedIn: false
+      },
+      {
+        name: "Maggie",
+        isUserLoggedIn: true
+      },
     ];
     return (
       <div className="App">
         {/* Add IsUserLoggedIn component here with props */}
+        <IsUserLoggedIn users={Users} />
       </div>
     );
   }
