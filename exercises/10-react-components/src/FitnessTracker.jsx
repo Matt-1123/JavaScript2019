@@ -23,14 +23,24 @@ import React from "react";
 import "./FitnessTracker.css";
 // You will need to loop through "activities" data in your React components below
 import activities from "./FitnessTrackerActivities.json";
+import { prototype } from "eventemitter3";
 
 function FitnessActivity(props) {
-  // Put the HTML as JSX
+  return(<main className="FitnessTracker">
+    <div class="FitnessActivity-startDate">{props.startDate}</div>
+    <div class="FitnessActivity-activity">{props.activity}</div>
+    <div class="FitnessActivity-miles">{props.miles}</div>
+    <div class="FitnessActivity-time">{props.time}</div>
+  </main>)
 }
 
 function FitnessTracker() {
   // Loop through activities here
-  return <>Put JSX Here</>;
+  return <>
+    {activities.map(workout => {
+      return FitnessActivity(workout);
+    })}
+  </>;
 }
 
 export default FitnessTracker;
