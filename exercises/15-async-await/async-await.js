@@ -18,6 +18,12 @@ const addQuoteToPage = text => {
  * Create an ajaxRequest() function. It should use async & await.
  * HINT: you will also need to use Axios to make an HTTP request.
  */
+const ajaxRequest = async () => {
+  let data = await axios
+    .get("https://ron-swanson-quotes.herokuapp.com/v2/quotes")
+    .then(res => res.data);
+  return data;
+};
 
 /**
  * This attaches click event to the button
@@ -26,4 +32,5 @@ document.getElementsByTagName("button")[0].addEventListener("click", e => {
   /**
    * Call on ajaxRequest() here. Then display the quote on the page with addQuoteToPage().
    */
+  ajaxRequest().then(res => addQuoteToPage(res));
 });
